@@ -1,0 +1,45 @@
+syntax enable
+set number
+set background=light
+set ts=2
+colorscheme solarized
+
+" ctrl-N twice in normal mode to toggle line numbers
+nmap <C-N><C-N> :set invnumber<CR>
+
+" bind F3 to toggle line numbers
+noremap <F3> :set invnumber<CR>
+inoremap <F3> <C-O>:set invnumber<CR>
+
+" Attempt exit on Ctrl+Q
+nnoremap <C-Q> :q<CR>
+inoremap <C-Q> <C-O>:q<CR>
+vnoremap <C-Q> :q<CR>
+
+" Force exit (no save) on Ctrl+Q (2x)
+nnoremap <C-Q><C-Q> :q!<CR>
+inoremap <C-Q><C-Q> <C-O>:q!<CR>
+
+" bind cut to CTRL+D
+noremap <C-D> dd
+inoremap <C-D> <C-O>dd
+
+" bind copy to CTRL+C
+noremap <C-C> yy
+inoremap <C-C> <C-O>yy
+
+" bind paste to CTRL+V
+noremap <C-V> p
+inoremap <C-V> <C-O>p
+
+" bind save to CTRL+S
+noremap <C-S> :w<CR>
+inoremap <C-S> <C-O>:w<CR>
+
+" bind next to CTRL+N
+noremap <C-N> :tabn<CR>
+inoremap <C-N> <C-O>:tabn<CR>
+
+" bind next to CTRL+P
+noremap <C-P> :tabp<CR>
+inoremap <C-P> <C-O>:tabp<CR>

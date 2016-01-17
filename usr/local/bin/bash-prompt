@@ -1,0 +1,7 @@
+if [ "$TERM" == "screen-256color" -a -n "$TMUX" ]; then
+  # Update the window name if we are in a tmux session
+  echo -ne "\033k${USER:0:1}@${HOSTNAME:0:16}\033\\"
+else
+  # Set terminal title when not in tmux
+  echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"
+fi
