@@ -1,7 +1,8 @@
 syntax enable
 set number
-set background=light
+set background=dark
 set ts=2
+set sw=2
 colorscheme solarized
 
 " ctrl-N twice in normal mode to toggle line numbers
@@ -43,3 +44,14 @@ inoremap <C-N> <C-O>:tabn<CR>
 " bind next to CTRL+P
 noremap <C-P> :tabp<CR>
 inoremap <C-P> <C-O>:tabp<CR>
+
+" bind make to F5 for python
+noremap <F5> :make<CR>
+inoremap <F5> <ESC> :make<CR>
+
+" enable python autosave/make functionality
+au FileType python set makeprg=clear;python\ %
+au FileType python set autowrite
+
+vnoremap <TAB> ><CR>gv
+vnoremap <S-TAB> <<CR>gv
