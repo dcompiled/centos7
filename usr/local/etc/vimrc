@@ -53,9 +53,11 @@ au FileType python inoremap <F5> <ESC> :make<CR>
 au FileType python set makeprg=clear;python\ %
 au FileType python set autowrite
 
+" enable F5 save/execute for bash scripts
 au FileType sh noremap <F5> :w<CR>:!clear;%:p<CR>
 au FileType sh inoremap <F5> <ESC>:w<CR>:!clear;%:p<CR>
 
+" bind tab / shift-tab to indent in visual mode
 vnoremap <TAB> ><CR>gv
 vnoremap <S-TAB> <<CR>gv
 
